@@ -7,23 +7,50 @@
     <script>
       tailwind.config = {
         theme: {
-          extend: {
-            colors: {
-              clifford: "#da373d",
-            },
+          content: ["./src/**/*.{html,js}"],
+          theme: {
+            extend: {},
           },
+          plugins: [],
         },
       };
     </script>
     <style type="text/tailwindcss">
       @layer utilities {
-        .content-auto {
-          content-visibility: auto;
-        }
       }
     </style>
   </head>
-  <body>
-    <h1 class="text-3xl font-bold underline">OPREC RDKI</h1>
+  <body class="flex flex-col gap-3">
+    <nav class="w-full bg-blue-500 p-2 text-center">
+      <p class="text-white text-xl font-bold">OPREC RDKI</p>
+    </nav>
+    <div class="container mx-auto flex flex-col gap-3">
+      <div class="flex flex-col gap-1 text-center">
+        <p class="text-base font-semibold">Susunan Kepanitiaan</p>
+        <table class="w-full table-fixed" id="myTable">
+          <thead>
+            <tr>
+              <th class="border border-black w-9">No</th>
+              <th class="border border-black">Nama</th>
+              <th class="border border-black">Jabatan</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+      <div class="flex flex-col gap-1 text-center">
+        <p class="text-base font-semibold">Timeline OPREC</p>
+      </div>
+      <iframe
+        src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%234285F4&ctz=Asia%2FJakarta&src=ZTJjMzc5MDU5MTg3ZmVjOTViY2EwZGY1ODQyOTUyNDEzNWM3OTFmNzUyMDNiMjQzODY4ODRmMTQyMzkwYTM1YkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23616161"
+        style="border: solid 1px #777"
+        width="800"
+        height="600"
+        frameborder="0"
+        scrolling="no"
+        class="w-full"></iframe>
+    </div>
   </body>
+
+  <script src="index.js"></script>
 </html>
